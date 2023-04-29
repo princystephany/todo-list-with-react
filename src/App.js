@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+      import './App.css';
+      import {useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      function App() {
 
-export default App;
+        const[task,setTask]=useState(null)
+
+        function comment(val){
+          setTask(val.target.value)       
+         }
+
+
+
+        return (
+          <div className="App">
+            <div className="page">
+
+<div className="header">
+Make a todo List
+</div>
+<div className="body">
+Type your tasks
+  <br/>
+<input type="text" className="input" onChange={comment} ></input>
+
+<button className="button">Add</button>
+
+<div className="task">{task}</div>
+</div>
+ 
+              </div>
+          </div> 
+        );
+      }
+
+      export default App;
