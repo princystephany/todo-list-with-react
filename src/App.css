@@ -2,50 +2,34 @@
   text-align: center;
 }
 
-.page{
-
-  width:100%;
-  min-height:100%;
-  margin:2%;
-  background-color: lightblue;
-}
- 
-.header{
-
-  height:20%;
-  width:100% ;
-  font-size: 30px;
-  background-color: darkcyan;
-  color: aliceblue;
-}
- 
-.body{
-  height:500px;
-  width:100% ;
-  font-size: 20px;
-  background-color:black;
-  color: aliceblue;
- 
-}
-.input {
-
-  width: 270px; 
-  height: 30px;
-}
- .button{
-
-  width:  70px; 
-  height: 30px;
-  background-color: grey;
+ body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
  }
- 
-.task{
 
+ h1{
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
 
-  width:  270px; 
-  height: 30px;
-  background-color: aliceblue;
-  color: black;
-   
-   
+ }
+
+ .list-of-task{
+  padding-top :10px;
+  width:400px;
+  color:aliceblue;
+
+ }
+
+ .task-name{
+  cursor:pointer;
+ }
+
+ .completed-task{
+  text-decoration: line-through;
  }

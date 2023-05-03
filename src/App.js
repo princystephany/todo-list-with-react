@@ -1,35 +1,59 @@
       import './App.css';
+
       import {useState} from "react";
+
+
+
+      const filter=[ {text: "Wake up",
+      isCompleted:false},
+
+      {text: "Fresh up",
+      isCompleted:false},
+
+      {text: "Have BreakFast",
+      isCompleted:false}];
 
       function App() {
 
-        const[task,setTask]=useState(null)
+         const ToDoList = () => {
 
-        function comment(val){
-          setTask(val.target.value)       
+          const[tasks,updateTask]=  useState(filter[0])
+ 
          }
 
+         const toggleTask = index => {
 
+          const newTask =[...filter]
+
+          if(newTask[index].isCompleted)
+          {
+            newTask[index].isCompleted=false;
+          }
+
+          else{
+            newTask[index].isCompleted=true;
+          }
+          updateTask(newTask);
+         }
 
         return (
-          <div className="App">
-            <div className="page">
+ <div className="list-of-task">
+<h1>React TODO List</h1>
 
-<div className="header">
-Make a todo List
-</div>
-<div className="body">
-Type your tasks
-  <br/>
-<input type="text" className="input" onChange={comment} ></input>
+{filter.map((task,index) => (
+<div className = "task-status">
 
-<button className="button">Add</button>
-
-<div className="task">{task}</div>
-</div>
+  <span onClick={()=> toggleTask(index)}  className={task.isCompleted?"task-name completed-task":"task-name"} >
+{index}
+{task.text}  
  
-              </div>
-          </div> 
+</span>
+
+</div>
+))}
+
+
+ </div>
         );
       }
 
